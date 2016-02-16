@@ -9,3 +9,9 @@ This is currently a very naive attempt at solving a CVRP problem for Boy Scouts 
 3. googlemaps - This is used to geocode the addresses and optimize routes, install using: pip install googlemaps
 
 You'll also need a Google Developers' API key which you can obtain from https://console.developers.google.com/apis
+
+## Running
+
+```
+$ ./mulchplanner.py orders.csv
+```
