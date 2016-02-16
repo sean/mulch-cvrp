@@ -12,6 +12,8 @@ You'll also need a Google Developers' API key which you can obtain from https://
 
 ## Running
 
+It expects a CSV file with the following columns: 'ID', 'Name', 'BagCount', 'Address1', 'Address2', 'City', 'State', 'Zip', 'Lat', 'Lng', 'OriginDist'.
+
 ```
 $ ./mulchplanner.py orders.csv
 ```
