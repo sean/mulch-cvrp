@@ -1,0 +1,7 @@
+.DS_Store
+config.json
+*.csv
+*.pyc
+output/*.png
+output/*.pdf
+output/*.csv
