@@ -91,7 +91,7 @@ class Partitioner:
 
   def save_csv(self, data, outdir):
     with open(outdir + '/data.csv', 'wb') as f:
-      w = csv.DictWriter(f, ['ID','Name','BagCount','Address1','Address2','City','State','Zip','Lat','Lng','OriginDist'])
+      w = csv.DictWriter(f, ['ID','Name','BagCount','Address1','Address2','City','State','Zip','Notes','Lat','Lng','OriginDist'],extrasaction='ignore')
       w.writeheader()
       w.writerows(data)
 

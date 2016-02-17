@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import partition
+import argparse
 import os.path
 import urllib
 import route
@@ -23,10 +24,12 @@ class MulchPlanner:
     # First calculate the deliveries based on distance
     p = partition.Partitioner(self.data, self.config)
     groups = p.calculate_deliveries()
+    # Save the routes to a file in case we need to modify them manually
+    self.save_routes(groups)
     # Second calculate the routes based on the deliveries
     r = route.Router(p.orders(), groups, self.config)
     routes = r.routes()
-    # TODO process the routes and write them to files
+    # Process the routes to generate PDFs for the drivers
     for idx, d in enumerate(routes):
       self.generate_pdf("Route-%d" % (idx+1), d)
 
@@ -52,7 +55,11 @@ class MulchPlanner:
     <hr />
     <ol>""" % (title, bags, img)
     for order in r:
-      html += "<li>%s (%s bags)</li>" % (self.address_for_order(order), order['BagCount'])
+      notes = order['Notes']
+      html += "<li>%s (%s bags)" % (self.address_for_order(order), order['BagCount'])
+      if notes and notes.strip():
+        html += "<br/>%s" % (notes)
+      html += "</li>"
     html += "</ol>"
     return html
 
@@ -94,7 +101,16 @@ class MulchPlanner:
     cfg['origin'] = (cfg['origin'][0],cfg['origin'][1])
     return cfg
 
+  def save_routes(self, data):
+    savefile = "%s/routes.json" % (self.config['output_dir'])
+    with open(savefile, 'w') as f:
+      json.dump(data, f, indent=2)
+
 if __name__ == '__main__':
+  #parser = argparse.ArgumentParser(description='Generate PDF route maps for mulch deliveries.')
+  #parser.add_argument('filename', help='the filename containing the orders')
+  #parser.add_argument('config', help='the configuration filename')
+  #args = parser.parse_args()
   data_file = sys.argv[1]
   mp = MulchPlanner(data_file, 'config.json')
   mp.process()
