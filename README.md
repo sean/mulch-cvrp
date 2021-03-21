@@ -15,34 +15,31 @@ The web application will target the following user personas:
 
 ### General
 
-Login via email address and receive a cookie good for 24 hours (keeping the user signed into the application for the entire delivery day). No passwords to remember.
-View overall delivery progress in terms of bags delivered and routes completed.
+- Login via email address and receive a cookie good for 24 hours (keeping the user signed into the application for the entire delivery day). No passwords to remember.
+- View overall delivery progress in terms of bags delivered and routes completed.
+- Receive delivery notifications.
+- View where the trucks and chase cars are.
 
 ### Delivery Drivers & Navigators
 
-Receive an assigned route of deliveries.
-Tap on a delivery address to launch driving directions to that address.
-Confirm the number of bags delivered to an address (mark a delivery as complete).
+- Receive an assigned route of deliveries.
+- Tap on a delivery address to launch driving directions to that address.
+- Confirm the number of bags delivered to an address (mark a delivery as complete).
 
 ### Chase Car Drivers
 
-Confirm the delivery truck being followed (so that if a parent needs to know where their scout is, they can find them).
+- Confirm the delivery truck being followed (so that if a parent needs to know where their scout is, they can find them).
 
 ### Logistics Coordinator
 
-Assign roles to various users, giving them increased permissions.
-View and Adjust the overall route plans.
-Receive delivery notifications.
-Compute real-time statistics regarding team performance.
+- Assign roles to various users, giving them increased permissions.
+- View and Adjust the overall route plans.
+- Compute real-time statistics regarding team performance.
 
 ### Yard Boss & Crew
 
-Receive notification when a truck has completed all deliveries for its route (and is on its way back to the yard).
-Confirm when the truck arrives at the yard and when it is done being loaded (to track load times).
-
-### Parent Volunteers & Scouts
-
-Receive updates as to where the trucks and chase cars are.
+- Receive notification when a truck has completed all deliveries for its route (and is on its way back to the yard).
+- Confirm when the truck arrives at the yard and when it is done being loaded (to track load times).
 
 ## Getting up and running
 
