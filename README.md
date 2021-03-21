@@ -1,19 +1,57 @@
-# Vehicle Route Planner for Scout Mulch Delivery
+# Scout Mulch Delivery Web Application
 
-This is currently a very naive attempt at solving a CVRP problem for Boy Scouts delivering mulch.
+The intent of this project is to build a web application which can be used to coordinate the delivery of thousands of bags of mulch across hundreds of orders.
 
-## Dependencies
+## Features
 
-1. webkit2png - This is used to generate the map images used by the drivers to see the route, install from http://www.paulhammond.org/webkit2png/
-2. fpdf - This is used to generate the PDF documents used by the drivers, install using: pip install fpdf 
-3. googlemaps - This is used to geocode the addresses and optimize routes, install using: pip install googlemaps
+The web application will target the following user personas:
+- Logistics Coordinator
+- Delivery Truck Drivers and Navigators
+- Chase Car Drivers
+- Yard Boss
+- Yard Crew
+- Scouts
+- Other parent volunteers
 
-You'll also need a Google Developers' API key which you can obtain from https://console.developers.google.com/apis
+### General
 
-## Running
+Login via email address and receive a cookie good for 24 hours (keeping the user signed into the application for the entire delivery day). No passwords to remember.
+View overall delivery progress in terms of bags delivered and routes completed.
 
-It expects a CSV file with the following columns: 'ID', 'Name', 'BagCount', 'Address1', 'Address2', 'City', 'State', 'Zip', 'Notes', Lat', 'Lng', 'OriginDist'.
+### Delivery Drivers & Navigators
 
-```
-$ ./mulchplanner.py orders.csv
-```
+Receive an assigned route of deliveries.
+Tap on a delivery address to launch driving directions to that address.
+Confirm the number of bags delivered to an address (mark a delivery as complete).
+
+### Chase Car Drivers
+
+Confirm the delivery truck being followed (so that if a parent needs to know where their scout is, they can find them).
+
+### Logistics Coordinator
+
+Assign roles to various users, giving them increased permissions.
+View and Adjust the overall route plans.
+Receive delivery notifications.
+Compute real-time statistics regarding team performance.
+
+### Yard Boss & Crew
+
+Receive notification when a truck has completed all deliveries for its route (and is on its way back to the yard).
+Confirm when the truck arrives at the yard and when it is done being loaded (to track load times).
+
+### Parent Volunteers & Scouts
+
+Receive updates as to where the trucks and chase cars are.
+
+## Getting up and running
+
+### Prerequisites
+
+Requires Java JDK version 8 or higher to be installed. To check, run ```java -version``` and [Gradle](https://gradle.org/install/).
+
+### Running
+
+```./gradlew bootRun```
+
+## Screenshots
