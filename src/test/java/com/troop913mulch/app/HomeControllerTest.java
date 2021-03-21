@@ -1,4 +1,4 @@
-package com.example.springboot;
+package com.troop913mulch.app;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -15,7 +15,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class HelloControllerTest {
+public class HomeControllerTest {
 
 	@Autowired
 	private MockMvc mvc;
